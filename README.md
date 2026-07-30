@@ -50,4 +50,4 @@ The generated application should preserve:
 - Revenue reporting
 - Audit log history
 
-The data wave should convert the SQLite-shaped schema in `db/schema.sql` into Postgres/Flyway migrations and seed equivalent target data from `db/seed.sql`.
+The data wave should convert the MySQL-compatible schema in `db/schema.mysql.sql` into Postgres/Flyway migrations and seed equivalent target data from `db/seed.sql`.

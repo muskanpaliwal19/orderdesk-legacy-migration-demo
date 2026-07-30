@@ -4,7 +4,7 @@ This repo is intentionally shaped so Gallop can demonstrate a data wave during m
 
 ## Source Data Estate
 
-- Source database shape: SQLite-style schema and seed data in `db/schema.sql` and `db/seed.sql`.
+- Source database shape: MySQL-compatible schema and seed data in `db/schema.mysql.sql` and `db/seed.sql`.
 - Runtime store: lightweight JSON file generated under `data/orderdesk.json` so the demo runs without native SQLite dependencies.
 - Core entities: `customers`, `products`, `orders`, `order_items`, `audit_logs`.
 - Reporting view: `order_totals` aggregates order line totals.
@@ -21,10 +21,10 @@ This repo is intentionally shaped so Gallop can demonstrate a data wave during m
 
 ### Wave 1: Order Core Cutover
 
-Objective: Migrate the order-taking data model and reporting totals from SQLite into Postgres.
+Objective: Migrate the order-taking data model and reporting totals from MySQL-compatible DDL into Postgres.
 
 Scope:
-- Convert SQLite DDL to PostgreSQL DDL.
+- Convert MySQL-compatible DDL to PostgreSQL DDL.
 - Preserve customers, products, orders, order_items, and audit_logs.
 - Recreate `order_totals` as either a PostgreSQL view or a Spring report query.
 - Seed target Postgres with the same sample rows for preview/demo validation.

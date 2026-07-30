@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/health', (_req, res) => {
-  res.json({ ok: true, app: 'orderdesk-legacy', database: 'json-backed legacy store', migrationSchema: 'db/schema.sql' });
+  res.json({ ok: true, app: 'orderdesk-legacy', database: 'json-backed legacy store', migrationSchema: 'db/schema.mysql.sql' });
 });
 
 app.get('/api/customers', (_req, res) => {

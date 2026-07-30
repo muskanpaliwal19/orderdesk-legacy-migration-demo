@@ -1,0 +1,19 @@
+{
+  "name": "orderdesk-legacy-migration-demo",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Legacy Node/Express order desk app with SQL data-wave assets for a Spring Boot + Next.js + Postgres migration demo.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "DB_RESET=true node scripts/seed.js",
+    "export:orders": "node scripts/export-orders.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OrderDesk Legacy</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Legacy migration source</p>
+        <h1>OrderDesk</h1>
+        <p class="lede">A small Node/Express + SQLite order operations app prepared for migration to Spring Boot, Next.js, and Postgres.</p>
+      </div>
+      <div class="stat-card">
+        <span>Total revenue</span>
+        <strong id="totalRevenue">Loading...</strong>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <div class="panel-header">
+          <h2>Orders</h2>
+          <select id="statusFilter" aria-label="Filter orders by status">
+            <option value="">All statuses</option>
+            <option value="new">New</option>
+            <option value="paid">Paid</option>
+            <option value="shipped">Shipped</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+        </div>
+        <div id="orders" class="list"></div>
+      </article>
+
+      <article class="panel">
+        <h2>Customers</h2>
+        <form id="customerForm" class="form">
+          <input name="name" placeholder="Customer name" required>
+          <input name="email" type="email" placeholder="Email" required>
+          <select name="tier">
+            <option value="standard">Standard</option>
+            <option value="premium">Premium</option>
+            <option value="enterprise">Enterprise</option>
+          </select>
+          <button type="submit">Add customer</button>
+        </form>
+        <div id="customers" class="list compact"></div>
+      </article>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
